@@ -1,4 +1,5 @@
 package com.ujin.demo.domain.posts;
+
 import com.ujin.demo.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;

@@ -26,6 +26,7 @@ class ControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(hello));
     }
+
     @Test
     public void helloDto가_리턴된다() throws Exception {
         String name = "hello";
@@ -33,8 +34,8 @@ class ControllerTest {
 
         mvc.perform(
                 get("/hello/dto")
-                .param("name", name)
-                .param("amount", String.valueOf(amount)))
+                        .param("name", name)
+                        .param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(name)))
                 .andExpect(jsonPath("$.amount", is(amount)));

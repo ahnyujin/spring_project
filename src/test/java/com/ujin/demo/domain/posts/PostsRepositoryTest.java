@@ -20,7 +20,7 @@ class PostsRepositoryTest {
     PostsRepository postsRepository;
 
     @AfterEach
-    public void cleanup(){
+    public void cleanup() {
         postsRepository.deleteAll();
     }
 
@@ -44,12 +44,12 @@ class PostsRepositoryTest {
 
     @Test
     public void BaseTimeEntity_등록() {
-        LocalDateTime now = LocalDateTime.of(2020,9,24,0,0,0);
+        LocalDateTime now = LocalDateTime.of(2020, 9, 24, 0, 0, 0);
         postsRepository.save(Posts.builder()
-        .title("title")
-        .content("content")
-        .author("author")
-        .build());
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
 
         List<Posts> postsList = postsRepository.findAll();
 

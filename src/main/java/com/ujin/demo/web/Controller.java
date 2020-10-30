@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @GetMapping("/hello")
-    public String hello(){
+    public String hello() {
         return "hello";
     }
+
     @GetMapping("/hello/dto")
     public ResponseDto helloDTO(@RequestParam("name") String name,
-                                @RequestParam("amount") int amount){
+                                @RequestParam("amount") int amount) {
         return new ResponseDto(name, amount);
     }
 }
