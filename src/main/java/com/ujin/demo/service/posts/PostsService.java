@@ -2,7 +2,6 @@ package com.ujin.demo.service.posts;
 
 import com.ujin.demo.domain.posts.Posts;
 import com.ujin.demo.domain.posts.PostsRepository;
-import com.ujin.demo.web.Controller;
 import com.ujin.demo.web.dto.PostsListResponseDto;
 import com.ujin.demo.web.dto.PostsResponseDto;
 import com.ujin.demo.web.dto.PostsSaveRequestDto;
@@ -11,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 
@@ -50,7 +50,7 @@ public class PostsService {
     }
 
     @Transactional(readOnly = true)
-    public Object findAllDesc() {
+    public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream()
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
